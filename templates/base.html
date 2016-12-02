@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home">My First Site</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="home">HOME</a></li>
+      <li><a href="company">COMPANIES</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <div class="media-body">
+        <h1><big>{% block header %}{% endblock %}</big></h1>
+        <h1><middle>{% block content %}{% endblock %}</middle></h1>
+    </div>
+</div>
+</body>
+</html>

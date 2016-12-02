@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Разные компании{% endblock %}
+{% block header %}Список компаний:{% endblock %}
+{% block content %}
+    <ul>
+        {% for company in companies %}
+            <li><a href="{%  url 'company_url' company.id %}">{{ company.title }}</a></li>
+            {% if company.title == 'JBL' %}
+                {% include 'desc.html' with company=company %}
+            {% endif %}
+        {% empty %}
+            Пустой список
+        {% endfor %}
+    </ul>
+{% endblock %}
